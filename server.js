@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const history = require('connect-history-api-fallback');
 
 // config..
 const connStr = 'mongodb://autobookdbUser:jshdf76KHDGsi@localhost:27017/autobook';
@@ -23,6 +24,7 @@ mongoose.connect(connStr, { useNewUrlParser: true, useUnifiedTopology: true }, (
 });
 
 // configuring middleware..
+app.use(history());
 app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ limit: '10MB', extended: false }));
@@ -35,11 +37,11 @@ app.use('/api', apiRoute);
 
 /* GET Home App */
 app.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '/public/home/index.html'));
+  res.sendFile(path.join(__dirname, './public/home/index.html'));
 });
 /* GET Cpanel App */
 app.get(['/cpanel', '/cpanel/*'], function(req, res, next) {
- res.sendFile(path.join(__dirname, '/public/cpanel/index.html'));
+  res.sendFile(path.join(__dirname, './public/cpanel/index.html'));
 });
 
 app.get('*', (req, res) => {
