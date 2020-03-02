@@ -35,15 +35,6 @@ const apiRoute = require('./routes/apiRoute');
 
 app.use('/api', apiRoute);
 
-/* GET Home App */
-app.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname, './public/home/index.html'));
-});
-/* GET Cpanel App */
-app.get(['/cpanel', '/cpanel/*'], function(req, res, next) {
-  res.sendFile(path.join(__dirname, './public/cpanel/index.html'));
-});
-
 app.get('*', (req, res) => {
   res.send('NOTHING FOUND 404');
 });
