@@ -1,0 +1,33 @@
+{
+  "name": "expressstaticserver",
+  "version": "1.0.0",
+  "description": "Static server for serving react SPAs and API endpoint",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itashdv/expressStaticServer.git"
+  },
+  "author": "iTash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itashdv/expressStaticServer/issues"
+  },
+  "homepage": "https://github.com/itashdv/expressStaticServer#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "generate-password": "^1.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.12",
+    "nodemailer": "^6.4.2",
+    "uuid": "^3.3.3",
+    "validator": "^12.1.0",
+    "path": "^0.12.7"
+  }
+}
